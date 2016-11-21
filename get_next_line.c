@@ -63,10 +63,10 @@ t_buff	*read_into(t_buff **buff, int fd)
 		if (ft_strchr(buff[fd]->s, 10))
 			break ;
 	}
+	buff[fd]->is_s = (buff[fd]->s) ? 1 : 0;
 	buff[fd]->is_f = (read_size && read_size == buff[fd]->old_r_s) ? 1 : 0;
 	buff[fd]->old_r_s = read_size;
-	if ((buff[fd]->p = buff[fd]->s))
-		buff[fd]->is_s = 1;
+	buff[fd]->p = buff[fd]->s;
 	return (buff[fd]);
 }
 
