@@ -20,7 +20,7 @@ FILES_2 = ft_memalloc ft_memdel ft_strnew ft_strdel ft_strclr ft_striter ft_stri
 
 FILES_BONUS = ft_lstnew ft_lstdelone ft_lstadd ft_lstiter ft_lstdel ft_lstmap
 
-FILES_PERSONAL = ft_putstrarr ft_strarrnew ft_strarrdel ft_strarrlen ft_realloc_c ft_realloc_s ft_pow
+FILES_PERSONAL = ft_putstrarr ft_strarrnew ft_strarrdel ft_strarrlen ft_realloc_c ft_realloc_s ft_pow get_next_line
 
 FOCUS = ft_strncmp
 
