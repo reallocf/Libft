@@ -19,13 +19,13 @@ int		get_next_line(const int fd, char **line)
 
 	if (!line || fd < 0)
 		return (-1);
-	*line = NULL;
+	*line = ft_strnew(0);
 	while (1)
 	{
 		if ((!buff[fd] || !buff[fd]->is_s) && !read_into(buff, fd))
 			return (-1);
 		if (!buff[fd]->is_s && !buff[fd]->is_f && clear(buff, fd))
-			return ((*line) ? 1 : 0);
+			return ((**line) ? 1 : 0);
 		if ((nl = ft_strchr(buff[fd]->p, 10)))
 		{
 			if (!(*line = copy_until_n(line, buff[fd]->p, nl - buff[fd]->p)))
