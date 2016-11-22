@@ -17,9 +17,8 @@ int		get_next_line(const int fd, char **line)
 	static t_buff	*buff[MAX_FD];
 	char			*nl;
 
-	if (!line || fd < 0)
+	if (!line || fd < 0 || !(*line = ft_strnew(0)))
 		return (-1);
-	*line = ft_strnew(0);
 	while (1)
 	{
 		if ((!buff[fd] || !buff[fd]->is_s) && !read_into(buff, fd))
