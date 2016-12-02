@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*copy_until_n(char **s, char *buff, size_t n)
+static char	*copy_until_n(char **s, char *buff, size_t n)
 {
 	size_t	s_len;
 	char	*res;
@@ -30,7 +30,7 @@ char	*copy_until_n(char **s, char *buff, size_t n)
 	return (res);
 }
 
-t_buff	*read_into(t_buff **buff, int fd)
+static t_buff	*read_into(t_buff **buff, int fd)
 {
 	long long	read_size;
 	char		read_s[BUFF_SIZE + 1];
@@ -59,7 +59,7 @@ t_buff	*read_into(t_buff **buff, int fd)
 	return (buff[fd]);
 }
 
-int		clear(t_buff **buff, int fd)
+static int	clear(t_buff **buff, int fd)
 {
 	free(buff[fd]->s);
 	buff[fd]->s = NULL;
