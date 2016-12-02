@@ -16,14 +16,25 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include "get_next_line.h"
 
-typedef struct		s_list
+# define BUFF_SIZE 1
+# define MAX_FD 2048
+
+typedef struct			s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct			s_buff
+{
+	char		*s;
+	char		*p;
+	int			is_s;
+	int			is_f;
+	long long	old_r_s;
+}				t_buff;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
